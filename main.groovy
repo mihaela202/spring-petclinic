@@ -12,7 +12,7 @@ if (nodeIP.length() > 6) {
             stage("Install Prerequisites"){
                 ansiblePlaybook credentialsId: 'jenkins-master-ssh-key', inventory: '${nodeIP},', playbook: 'prerequisites.yml'
                 }
-            stage("Pull Flaskex"){
+            stage("Pull Repo"){
                 ansiblePlaybook credentialsId: 'jenkins-master-ssh-key', inventory: '${nodeIP},', playbook: 'pull_repo.yml'
                 }
             stage("Install Python"){
